@@ -25,6 +25,8 @@ def get_greeting(language_code):
     return "Hello"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message is None:
+        return
     user = update.effective_user
     user_id = user.id
 
